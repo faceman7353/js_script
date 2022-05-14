@@ -1,0 +1,85 @@
+모듈
+
+프로그램은 작고 단순한것에서 크고 복잡한것으로 진화한다.
+부품 하나하나를 모듈이라고 한다.
+코드를 여러개의 파일로 분리하는것이다.
+
+-자주사용되는 코드를 별도의 파일로 만들어서 필요할때마다 재활용할수있다
+-ㅋㅎ두 슈종사애 필요한 로직을 빠르게 찾을수있다.
+-필요한 로직만을 로드해서 메모리의 낭비를 줄일수있다.
+-한번 다운로드된 모듈은 웹브라우저에 의해서 저장되기 때무에 
+동일한 로직을 로드할때 시간과 네트워크 트래픽을 절약할수이;ㅆ다.
+
+-자바스크립트에서는 모듈이라는 개념이 분명하게 존재하지 않는다.
+하지만 js가 구동되는 호스트 환경에 따라서 
+서로 다른 모듈화 방법이 제공되고 있다.
+
+
+모듈이 있는것과 없는것의 차이.
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="./greeting.js"></script>  <----여기서 greeting.js만들어 실제 필요한 내용을 넣고
+    </head>
+    <body>
+
+        <script>            
+          alert(welcome());  <---여기서 간결하게 호출만하면됨.
+        </script>
+
+    </body>
+</html>
+
+=========================================================
+node.js. 의 모듈로드
+-서버js
+
+웹브라우저에서 구동되는 js는 
+클라이언트 js라고 한다,.
+
+
+
+
+node.js가 파일을 읽어 올때사용하는 방법
+
+require()를 사용
+
+
+ex)
+node.circle.js - 읽음을 당하는 파일
+
+    var PI = Math.PI;
+
+    exports.area = function(r){
+        return PI * r * r;
+    } ;
+
+    exports.circumference = function(r){
+        return 2 * PI * r;
+    }
+
+
+
+
+node.demo.js - 읽는 주체
+
+    var circle = require('./node.circle.js');
+    console.log('The area of a circle of radius 4 is'
+                + circle.area(4));
+
+
+
+
+
+
+
+
+
+
+

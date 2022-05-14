@@ -25,3 +25,25 @@ var grades = new Object();
 grades['egoing'] = 10;
 grades['k8805'] = 6;
 grades['sorialgi'] = 80;
+
+
+=======================================================
+객체인데 배열 이야기 잠깐..
+
+배열에 있는 값을 가져올때는 
+for (     in    )  --- 문을 사용하게된다.
+
+ex)
+
+var grades = {'egoing':10,'k8805':6,'sorialgi':80};   --- 객체임
+for(key in grades){
+    document.write("key:" + key + "value:" +grades[key]+ "<br />")
+}
+이렇게 된다,
+
+
+위 코드를 좀더 깔끔하게 만들려면
+
+<ul>
+
+</ul>

@@ -1,0 +1,53 @@
+var grades = {
+    "list" : {'egoing':10, 'k8805':8, 'sorialgi':80}
+    "show" : function(){
+        alert(this);   ----grades를 지칭.
+        함수가 소속되있는 객체를 가리킨다.
+
+    }
+}
+
+alert(grades['list']['egoing'])  -- 리스트에 접근하려면..이렇게 하면됨.
+alert(grades['show']())   --- 함수이기때문에 ()사용
+
+
+==========================================================================
+
+
+var grades = {
+                "list" : {'egoing':10, 'k8805':8, 'sorialgi':80},
+                "show" : function(){
+                    for(var name in this.list){
+                        console.log(name,this.list[name])
+                    }    
+               
+               }
+            }
+            
+            /*alert(grades['list']['egoing'])*/
+            grades.show();  /* grades['show']() 와 같다.*/
+
+
+this - javascript에서 약속된 정의
+
+결국 grades  는 비슷한 것들을 모아서 그루핑할수있다-
+객체지향 프로그래밍.
+서로 연관되어있는 값과 처리를 하나의 그릇안에 모아서 그루핑해놓은것.
+
+연습)
+<ol>
+    <script>
+        var number = {
+            "list":{'kim':8512,'lee':8511,'moon':8512},
+            "show": function(){
+                for(var name in this.list){
+                    document.write("<li>"+name,this.list[name]+"</li>");
+                }
+                
+            }        
+        };
+
+        number.show()
+
+    </script>
+    </ol>
