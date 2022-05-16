@@ -1,0 +1,67 @@
+정규표현식은 여러 언어에서 사용됨.
+
+일단 정규표현식이 무엇인가를 먼저 인식.
+아주아주 강력함.
+
+ex)
+사용방법
+
+-컴파일
+패턴을 찾는것.
+
+
+-실행
+대상에 대해서 어떠한 일을 하는것.
+
+정규표현식 리터럴
+-var pattern = /a/;    <---// 사이에 문자를 넣으면 우리가 찾고자 하는것을 알리게된다.
+-var pattern = new RegExp('a')  <------위와 동일
+new RegExp('a') === /a/  같은 의미를 뜻한다.
+
+위 두가지다 사용해도 됨.
+
+이제 찾은 패턴에 대해서 구체적 작업을 해보자..
+
+
+
+먼저 작업의 대상찾기
+-내용을 추출하고 싶다.
+-존재 하는지 테스트
+-검색된 정보를 다른정보로 치환
+
+그 대상에 어떤 작업을 할것인지??
+
+
+
+RegExp.exec('abcd')
+-exec - 패턴이 찾는 정보를 대상에서 찾아서 그것이 있다면
+그것을 배열로 리턴하는 함수, 메소드 이다.
+
+
+var pattern = /a/;
+undefined
+pattern.exec('abcd');
+['a', index: 0, input: 'abcd', groups: undefined]0: "a"groups: undefinedindex: 0input: "abcd"length: 1[[Prototype]]: Array(0)
+var pattern = /a./;
+undefined
+pattern.exec('abcd');
+['ab', index: 0, input: 'abcd', groups: undefined]
+var pattern = /a/;
+undefined
+pattern.exec('bcd');
+null
+
+
+---> exec 를 사용하는 이유는 추출이 목적이다.
+---> test를 사용하는 이유는 존재의 유무이다.
+
+
+
+var pattern = /a/;
+undefined
+pattern.exec('bcdef');
+null
+pattern.test('bcdef');
+false
+pattern.test('abcdef');
+true
